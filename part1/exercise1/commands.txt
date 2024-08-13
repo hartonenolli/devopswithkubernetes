@@ -1,0 +1,16 @@
+docker build -t printer:1 .
+k3d image import printer:1
+kubectl create deployment printer-dep --image=printer:1
+	deployment.apps/printer-dep created
+kubectl logs -f printer-dep-7fd979fdf9-cc6c7 
+	2024-08-13T10:20:29.035Z: jr15f4qki2
+	2024-08-13T10:20:34.042Z: dswtka8oiq
+	2024-08-13T10:20:39.046Z: yv2mzvbq5d
+	2024-08-13T10:20:44.052Z: 4dnbch5vg4
+	2024-08-13T10:20:49.054Z: haz7511fwt
+	2024-08-13T10:20:54.059Z: 6tyrefsdi9
+	2024-08-13T10:20:59.062Z: kmat0e6el9
+	2024-08-13T10:21:04.068Z: cxguzejayk
+	2024-08-13T10:21:09.070Z: b1twfci96t
+	2024-08-13T10:21:14.077Z: s13osq4qjf
+
