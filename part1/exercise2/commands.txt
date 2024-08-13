@@ -1,0 +1,6 @@
+docker build -t server:2 .
+k3d image import server:2
+kubectl create deployment server-dep --image=server:2
+	deployment.apps/server-dep created
+kubectl logs -f server-dep-67b84f668c-rw4db 
+	Server started in port 8000
