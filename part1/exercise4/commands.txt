@@ -1,0 +1,5 @@
+kubectl apply -f manifests/deployment.yaml
+	deployment.apps/project-dep created
+kubectl logs -f project-dep-7b7958f4b9-hnxg9 
+	Server started in port 8000
+
