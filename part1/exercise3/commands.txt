@@ -1,0 +1,8 @@
+kubectl apply -f manifests/deployment.yaml
+	deployment.apps/logoutput-dep created
+kubectl logs -f logoutput-dep-7d675cfb97-8wb8z 
+	2024-08-13T12:33:23.167Z: m4xhwwecsy
+	2024-08-13T12:33:28.178Z: 7x5auhcc16
+	2024-08-13T12:33:33.182Z: ckromeorbs
+	2024-08-13T12:33:38.188Z: ciy1lqsdlt
+	2024-08-13T12:33:43.193Z: xe455fm4oa
