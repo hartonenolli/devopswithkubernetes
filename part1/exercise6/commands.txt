@@ -1,0 +1,22 @@
+k3d cluster delete
+k3d cluster create --port 8082:30080@agent:0 -p 8081:80@loadbalancer --agents 2
+k3d image import server:3
+kubectl create deployment server-dep --image=server:3
+	deployment.apps/server-dep created
+kubectl apply -f manifests/service.yaml 
+	service/project-svc configured
+kubectl get service
+	NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+	kubernetes    ClusterIP   10.43.0.1      <none>        443/TCP          45m
+	project-svc   NodePort    10.43.119.76   <none>        1234:30080/TCP   38m
+curl localhost:8082
+	<head>
+	    <title>Exercise 5</title>
+	</head>
+	<body>
+	    <h1>Exercise 5</h1>
+	    <p>Click the button to get a random number between 1 and 10.</p>
+	    <button onclick="getRandomNumber()">Get Random Number</button>
+	    <p id="randomNumber"></p>
+	    <script src="../script.js"></script>
+
