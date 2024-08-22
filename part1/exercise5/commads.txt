@@ -1,0 +1,9 @@
+docker build -t server:3 .
+k3d image import server:3
+kubectl create deployment server-dep --image=server:3
+	deployment.apps/server-dep created
+kubectl port-forward server-dep-5cbf67fc76-7c4g9 8000:8000
+	Forwarding from 127.0.0.1:8000 -> 8000
+	Forwarding from [::1]:8000 -> 8000
+	Handling connection for 8000
+
