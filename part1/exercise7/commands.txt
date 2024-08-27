@@ -1,0 +1,24 @@
+kubectl apply -f manifests/
+	ingress.networking.k8s.io/dwk-material-ingress created
+	service/printer-svc configured
+kubectl get svc
+	NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+	kubernetes    ClusterIP   10.43.0.1      <none>        443/TCP          5d
+	project-svc   NodePort    10.43.119.76   <none>        1234:30080/TCP   5d
+	printer-svc   ClusterIP   10.43.54.210   <none>        2345/TCP         10m
+kubectl get ing
+	NAME                   CLASS    HOSTS   ADDRESS                            PORTS   AGE
+	dwk-material-ingress   <none>   *       172.18.0.2,172.18.0.3,172.18.0.4   80      3d23h
+curl localhost:8081
+	<head>
+    	<title>Exercise 7</title>
+	</head>
+	<body>
+    	<h1>Exercise 7</h1>
+    	<p>Log current status every 5 seconds</p>
+    	<p id="random-string"></p>
+    	<script src="../script.js"></script>
+	
+    	<script>
+        	logRandomString()
+	    </script>
