@@ -1,0 +1,8 @@
+kubectl apply -f manifests/
+	deployment.apps/pingpong-dep created
+	ingress.networking.k8s.io/dwk-material-ingress created
+	service/pingpong-svc created
+curl localhost:8081/pingpong
+	pong { "amount": 1 }
+curl localhost:8081/pingpong
+	pong { "amount": 2 }
