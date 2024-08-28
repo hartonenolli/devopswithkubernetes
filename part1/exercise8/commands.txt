@@ -1,0 +1,24 @@
+k3d cluster start
+kubectl apply -f manifests/
+	deployment.apps/project-dep unchanged
+	ingress.networking.k8s.io/dwk-material-ingress created
+	service/project-svc configured
+kubectl get svc
+	NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+	kubernetes    ClusterIP   10.43.0.1      <none>        443/TCP    5d20h
+	printer-svc   ClusterIP   10.43.54.210   <none>        2345/TCP   20h
+	project-svc   ClusterIP   10.43.119.76   <none>        3456/TCP   5d20h
+kubectl get ing
+	NAME                   CLASS    HOSTS   ADDRESS                            PORTS   AGE
+	dwk-material-ingress   <none>   *       172.18.0.2,172.18.0.4,172.18.0.5   80      11s
+curl localhost:8081
+	<head>
+	    <title>Exercise 5</title>
+	</head>
+	<body>
+	    <h1>Exercise 5</h1>
+	    <p>Click the button to get a random number between 1 and 10.</p>
+	    <button onclick="getRandomNumber()">Get Random Number</button>
+	    <p id="randomNumber"></p>
+	    <script src="../script.js"></script>
+	</body>
